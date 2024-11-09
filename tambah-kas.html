@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tambah Kas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Tambah Kas</h1>
+    <nav>
+      <a href="index.html">Menu Utama</a>
+      <a href="laporan.html">Laporan</a>
+      <a href="detail-akun.html">Akun</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="tambahKas">
+      <form id="formTambahKas">
+        <label for="tanggal">Tanggal:</label>
+        <input type="date" id="tanggal" required>
+
+        <label for="jenisKas">Jenis Kas:</label>
+        <select id="jenisKas" required>
+          <option value="masuk">Masuk</option>
+          <option value="keluar">Keluar</option>
+        </select>
+
+        <label for="nominal">Nominal:</label>
+        <input type="number" id="nominal" required>
+
+        <label for="keterangan">Keterangan:</label>
+        <input type="text" id="keterangan">
+
+        <button type="button" onclick="simpanKas()">Simpan</button>
+      </form>
+    </section>
+
+    <section id="listKas">
+      <h2>List Kas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>Jenis Kas</th>
+            <th>Nominal</th>
+            <th>Keterangan</th>
+            <th>Saldo</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="kasTableBody">
+          <!-- Data kas akan ditampilkan di sini -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

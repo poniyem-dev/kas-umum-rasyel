@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Kas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border: 1px solid black;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    button {
+      margin: 10px;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Laporan Kas</h2>
+
+    <!-- Form untuk memilih tanggal -->
+    <label for="filterTanggal">Pilih Tanggal</label>
+    <input type="date" id="filterTanggal">
+    <button id="viewButton">View</button>
+
+    <!-- Tombol untuk melihat semua laporan -->
+    <button id="viewAllButton">View All</button>
+
+    <!-- Tombol untuk menghapus laporan -->
+    <button id="clearLaporanButton">Clear Laporan</button>
+
+    <!-- Tabel Laporan -->
+    <table id="laporanTable" border="1">
+      <thead>
+        <tr>
+          <th>Tanggal</th>
+          <th>Jenis Kas</th>
+          <th>Nominal</th>
+          <th>Keterangan</th>
+          <th>Saldo</th>
+        </tr>
+      </thead>
+      <tbody id="laporanTableBody">
+        <!-- Data kas yang difilter atau seluruh data akan ditampilkan di sini -->
+      </tbody>
+    </table>
+
+    <!-- Tombol Cetak -->
+    <button id="printButton">Cetak Laporan</button>
+  </div>
+
+  <script src="laporan.js"></script>
+</body>
+</html>

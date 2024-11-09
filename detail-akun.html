@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Akun - Aplikasi Kas Umum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Detail Akun</h1>
+  </header>
+
+  <main>
+    <div id="akunInfo"></div>
+    <div id="authButtons">
+      <button onclick="window.location.href='login.html'">Login</button>
+      <button onclick="window.location.href='register.html'">Daftar</button>
+    </div>
+    <div id="loggedInButtons">
+      <button onclick="editAkun()">Edit Akun</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </main>
+
+  <script>
+    // Cek status login
+    let isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn")) || false;
+    const akunData = JSON.parse(localStorage.getItem("akunData"));
+
+    function tampilkanAkun() {
+      const akunInfo = document.getElementById("akunInfo");
+      const authButtons = document.getElementById("authButtons");
+      const loggedInButtons = document.getElementById("loggedInButtons");
+
+      if (isLoggedIn && akunData) {
+        // Menampilkan detail akun jika sudah login
+        akunInfo.innerHTML = `
+          <h2>Halo, ${akunData.nama}</h2>
+          <p>No HP: ${akunData.noHp}</p>
+          <img src="${akunData.foto}" alt="Foto Profil" width="100">
+        `;
+        authButtons.style.display = "none";
+        loggedInButtons.style.display = "block";
+      } else {
+        // Menampilkan tombol Login dan Daftar jika belum login
+        akunInfo.innerHTML = "<p>Silakan login atau daftar untuk melihat detail akun.</p>";
+        authButtons.style.display = "block";
+        loggedInButtons.style.display = "none";
+      }
+    }
+
+    function editAkun() {
+      alert("Fitur Edit Akun belum tersedia.");
+    }
+
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      alert("Logout berhasil.");
+      window.location.href = "index.html";
+    }
+
+    // Panggil fungsi untuk menampilkan status akun
+    tampilkanAkun();
+  </script>
+</body>
+</html>

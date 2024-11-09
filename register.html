@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Akun - Aplikasi Kas Umum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Daftar Akun</h1>
+  </header>
+  
+  <main>
+    <form id="formDaftar" onsubmit="return daftarAkun()">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" required>
+
+      <label for="noHp">No HP:</label>
+      <input type="tel" id="noHp" required>
+
+      <label for="foto">Unggah Foto Profil:</label>
+      <input type="file" id="foto" accept="image/*" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+
+      <button type="submit">Daftar</button>
+    </form>
+  </main>
+
+  <script>
+    function daftarAkun() {
+      const nama = document.getElementById("nama").value;
+      const noHp = document.getElementById("noHp").value;
+      const password = document.getElementById("password").value;
+      const fotoInput = document.getElementById("foto");
+      const reader = new FileReader();
+
+      // Pastikan semua field terisi
+      if (!nama || !noHp || !password || !fotoInput.files[0]) {
+        alert("Isi semua field.");
+        return false;
+      }
+
+      reader.onload = function(event) {
+        const foto = event.target.result; // Menyimpan foto sebagai base64 string
+
+        // Simpan data akun di localStorage
+        const akunData = {
+          nama: nama,
+          noHp: noHp,
+          foto: foto,
+          password: password
+        };
+
+        localStorage.setItem("akunData", JSON.stringify(akunData));
+        alert("Registrasi berhasil! Silakan login.");
+        window.location.href = "login.html";
+      };
+
+      reader.readAsDataURL(fotoInput.files[0]);
+      return false;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Utama - Kas Umum</title>
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f2f2f2;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar Styling */
+    header {
+      background-color: #007bff;
+      padding: 20px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo h1 {
+      font-size: 32px;
+      color: #fff;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      position: relative;
+      padding: 5px 10px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #ffcc00;
+      bottom: 0;
+      left: 50%;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(45deg, #007bff, #00c6ff);
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    .hero .btn {
+      background-color: #28a745;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      margin: 10px;
+    }
+
+    .hero .btn:hover {
+      background-color: #218838;
+    }
+
+    .hero .btn:focus {
+      outline: none;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .logo h1 {
+        font-size: 28px;
+      }
+
+      nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+      }
+
+      nav ul li {
+        margin-left: 0;
+        margin-bottom: 15px;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero .btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo h1 {
+        font-size: 24px;
+      }
+
+      nav ul li a {
+        font-size: 16px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      footer p {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <h1>Kas Umum</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="tambah-kas.html">Tambah Kas</a></li>
+          <li><a href="laporan.html">Laporan</a></li>
+          <li><a href="detail-akun.html">Akun</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Selamat Datang di Aplikasi Kas Umum</h2>
+      <p>Kelola keuangan Anda dengan mudah dan praktis. Cek kas masuk/keluar, lihat laporan, dan kelola akun Anda di sini.</p>
+      <a href="tambah-kas.html" class="btn">Tambah Kas</a>
+      <a href="laporan.html" class="btn">Lihat Laporan</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 Kas Umum. Semua hak dilindungi.</p>
+    </div>
+  </footer>
+</body>
+</html>
